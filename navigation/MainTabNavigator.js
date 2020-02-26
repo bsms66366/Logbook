@@ -1,14 +1,16 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { Ionicons } from '@expo/vector-icons';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SessionScreen from '../screens/SessionScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import LinksScreen from '../screens/LinksScreen';
 import QRCodeScreen from '../screens/QRCodeScreen';
 import FeedbackScreen from '../screens/FeedbackScreen';
+import SessionScreen from '../screens/SessionScreen';
+
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -48,7 +50,7 @@ const LinksStack = createStackNavigator(
 LinksStack.navigationOptions = {
   tabBarLabel: 'C.S.E',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-bed' : 'md-link'} />
   ),
 };
 
@@ -62,9 +64,9 @@ const SessionsStack = createStackNavigator(
   config
 );
 SessionsStack.navigationOptions = {
-  tabBarLabel: 'Session Notes',
+  tabBarLabel: 'Attendance',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-book' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-calendar' : 'md-link'} />
   ),
 };
 
