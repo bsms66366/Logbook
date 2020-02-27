@@ -1,7 +1,7 @@
 import React from 'react';
-import {ScrollView, StyleSheet, View, Image, Text, Button, Dimensions, TouchableOpacity} from 'react-native';
+import {ScrollView, StyleSheet, View, Image, Text, Button, Dimensions, TouchableOpacity, DatePickerIOS} from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
-
+import ModalDropdown from 'react-native-modal-dropdown';
 
 export default function LinksScreen() {
   var {height, width} = Dimensions.get('window');
@@ -14,10 +14,21 @@ export default function LinksScreen() {
       <View style={{flex: 1, flexDirection: 'row', flexWrap:1}}>
         <Image source={require('../assets/images/ClinicalSkillsLogo4.png')} style={{width: 170, height: 210, }} />  
       </View>
-      
-       
+        
         <View style={styles.box}> 
-        <View style={styles.BoxBorder(height, width)}>
+         <ModalDropdown options={['Module 101','Module 102','Module 103','Module 104','Module 201','Module 202','Module 203','Module 204']}
+                        defaultValue = {"Select Module"}
+                        style = {{ flex: 1,paddingRight:30}}
+                        textStyle = {{fontWeight:'bold', textAlign: 'right', fontSize: 20, color:'#F2A007'}}
+                        dropdownStyle={{width:190, }}/>
+
+                        <ModalDropdown options={['GP-1','GP-2','GP-3','GP-4','GP-5','GP-6','GP-7','GP-8','GP-9','GP-10']}
+                        defaultValue = {"Select Session"}
+                        style = {{ flex: 1,paddingRight:30}}
+                        textStyle = {{fontWeight:'bold', textAlign: 'right', fontSize: 20, color:'#F2A007'}}
+                        dropdownStyle={{width:190, }}/>
+
+          <View style={styles.BoxBorder(height, width)}>
           <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://tools.brighton.ac.uk/medical-school/AnatomyInterface/admin/sessionpage.php') }>
               <Button title="" style={styles.instructions} onPress={() => {
             WebBrowser.openBrowserAsync('https://expo.io')}}/>
@@ -26,12 +37,8 @@ export default function LinksScreen() {
         </View>
 
        
-        
+         </View>
         </View>
-       
-      
-
-       </View>
     </View>
 
  
@@ -50,7 +57,7 @@ v_container: {
 
 box: {
   width: 900,
-  height: 800,
+  height: 700,
   paddingTop: 250,
   paddingLeft: 20,
   alignItems: 'center',
