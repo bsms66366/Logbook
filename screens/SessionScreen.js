@@ -8,12 +8,14 @@ export default function LinksScreen() {
   console.log (height, width)
   return (
 
+     
     <View style={styles.v_container}>
       <View style={styles.Logo}>
-        <Image source={require('../assets/images/ClinicalSkillsLogo3.png')} style={{width: 200, height: 90, }} />  
+        <Image source={require('../assets/images/ClinicalSkillsLogo4.png')} style={{width: 170, height: 210, }} />  
       </View>
       <View style={{flex: 1, flexDirection: 'row', flexWrap:1}}>
-        
+       
+        <View style={styles.box}> 
         <View style={styles.BoxBorder(height, width)}>
           <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://tools.brighton.ac.uk/medical-school/AnatomyInterface/admin/sessionpage.php') }>
             <Image source={require('../assets/images/interfaceIcons_Artboard1.png')} style ={styles.IconStyle} /> 
@@ -30,12 +32,13 @@ export default function LinksScreen() {
           </TouchableOpacity>
         </View>
         
-        
+        </View>
        
       
 
        </View>
     </View>
+
  
   );
 }
@@ -46,6 +49,7 @@ const styles = StyleSheet.create({
 
 box: {
   width: 900,
+  height: 800,
   paddingTop: 50,
   paddingLeft: 20,
   justifyContent: 'center',
