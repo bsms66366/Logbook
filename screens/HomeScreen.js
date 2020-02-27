@@ -44,6 +44,8 @@ export default function HomeScreen() {
           </View>
 
           <Text style={styles.getStartedText}>
+
+
           </Text>
         </View>
       </ScrollView>
@@ -115,6 +117,8 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     marginTop: 20,
     marginLeft: -10,
+    marginBottom: 10,
+
   },
   getStartedContainer: {
     alignItems: 'center',
@@ -133,9 +137,10 @@ const styles = StyleSheet.create({
   },
   getStartedText: {
     fontSize: 17,
-    color: 'rgba(157,157,157, 1)',
+    color: 'rgba(255,255,255, 1)',
     lineHeight: 24,
     textAlign: 'center',
+    marginTop: 50,
   },
   tabBarInfoContainer: {
     position: 'absolute',

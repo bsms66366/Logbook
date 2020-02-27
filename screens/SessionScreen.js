@@ -11,26 +11,21 @@ export default function LinksScreen() {
      
     <View style={styles.v_container}>
       <View style={styles.Logo}>
+      <View style={{flex: 1, flexDirection: 'row', flexWrap:1}}>
         <Image source={require('../assets/images/ClinicalSkillsLogo4.png')} style={{width: 170, height: 210, }} />  
       </View>
-      <View style={{flex: 1, flexDirection: 'row', flexWrap:1}}>
+      
        
         <View style={styles.box}> 
         <View style={styles.BoxBorder(height, width)}>
           <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://tools.brighton.ac.uk/medical-school/AnatomyInterface/admin/sessionpage.php') }>
-            <Image source={require('../assets/images/interfaceIcons_Artboard1.png')} style ={styles.IconStyle} /> 
-              <Button title="Module 102" style={styles.titleText} onPress={() => {
+              <Button title="" style={styles.instructions} onPress={() => {
             WebBrowser.openBrowserAsync('https://expo.io')}}/>
+            <Text style={{ fontSize: 20, color: '#fff' }}>Attend Session</Text>
           </TouchableOpacity>
         </View>
 
-        <View style={styles.BoxBorder(height, width)}>
-        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://expo.io') }>
-          <Image source={require('../assets/images/interfaceIcons_Artboard2.png')} style ={styles.IconStyle} />  
-        <Button title="Module 103" style={styles.titleText} onPress={() => {
-          WebBrowser.openBrowserAsync('https://expo.io')}}/>
-          </TouchableOpacity>
-        </View>
+       
         
         </View>
        
@@ -47,12 +42,18 @@ export default function LinksScreen() {
 
 const styles = StyleSheet.create({
 
+v_container: {
+    flex: 1,
+    paddingTop: 30,
+    backgroundColor: '#026666',
+  },
+
 box: {
   width: 900,
   height: 800,
-  paddingTop: 50,
+  paddingTop: 250,
   paddingLeft: 20,
-  justifyContent: 'center',
+  alignItems: 'center',
 },
 
 Logo: {
@@ -61,32 +62,36 @@ Logo: {
 },
 
 IconStyle:{
-    width: 90, 
-    height:90,
+    width: 80, 
+    height:80,
 },
 
 BoxBorder: (height, width) => ({
     marginTop: 10,
     width: (width /4)-10, 
     height: '20%',
-    borderColor: '#bcba40',
-    borderStyle:'dotted',
+    borderColor: '#F2F2EB',
+    borderStyle:'line',
     borderRadius: 8,
-    borderWidth: 1,
+    borderWidth: 4,
+    backgroundColor: '#F29F05',
     marginHorizontal: 5,
     alignItems: 'center',
   }),
-
-v_container: {
-    flex: 1,
-    paddingTop: 30,
-    backgroundColor: '#282828',
+  
+  instructions: {
+    color: '#888',
+    fontSize: 18,
+    marginHorizontal: 15,
+    marginBottom: 10,
   },
 
   titleText: {
     fontFamily: 'Helvetica',
     fontSize: 20,
     fontWeight: 'bold',
-    color:'#bcba40',
+    paddingTop: -10,
+    textAlign: 'center',
+    color: '#F2F2F2',
   },
 });
