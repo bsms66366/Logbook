@@ -29,9 +29,10 @@ export default function LinksScreen() {
                         dropdownStyle={{width:190, }}/>
 
           <View style={styles.BoxBorder(height, width)}>
-          <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx') }>
+          <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://universityofsussex.eu.qualtrics.com/jfe/form/SV_egtaH07LwYrxuvP') }>
               <Button title="" style={styles.instructions} onPress={() => {
-            WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx')}}/>
+            WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx'),alert('now login to your eportfolio account');}}/>
+
             <Text style={{ fontSize: 20, color: '#fff' }}>Attend Session</Text>
           </TouchableOpacity>
         </View>

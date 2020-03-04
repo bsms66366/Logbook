@@ -10,7 +10,7 @@
       "web"
     ],
     "version": "1.0.0",
-    "orientation": "Portrait",
+    "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "splash": {
       "image": "./assets/images/bsmsLogo[blu].png",

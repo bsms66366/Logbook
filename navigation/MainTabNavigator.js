@@ -10,7 +10,7 @@ import LinksScreen from '../screens/LinksScreen';
 import QRCodeScreen from '../screens/QRCodeScreen';
 import FeedbackScreen from '../screens/FeedbackScreen';
 import SessionScreen from '../screens/SessionScreen';
-
+import attendanceDate from '../screens/attendanceDate';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -42,7 +42,7 @@ HomeStack.path = '';
 /*****************************************************links****/
 const LinksStack = createStackNavigator(
   {
-    Links: LinksScreen,
+    Links: attendanceDate,
   },
   config
 );
