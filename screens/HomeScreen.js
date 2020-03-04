@@ -28,8 +28,8 @@ export default function HomeScreen() {
             }
             style={styles.welcomeImage}
           />
-   <Image source={require('../assets/images/ClinicalSkillsLogo3.png')} style={{width: 210, height: 270, }} />         
-<Text style={styles.getStartedText}>Wecome to the BSMS Clinical Skills Logbook</Text>
+   <Image source={require('../assets/images/ClinicalSkillsLogo3.png')} style={{width: 170, height: 220, }} />         
+<Text style={styles.getStartedText}>Wecome to the BSMS Logbook</Text>
 
         </View>
 

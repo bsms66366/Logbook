@@ -12,7 +12,7 @@ export default function LinksScreen() {
     <View style={styles.v_container}>
       <View style={styles.Logo}>
       <View style={{flex: 1, flexDirection: 'row', flexWrap:1}}>
-        <Image source={require('../assets/images/ClinicalSkillsLogo4.png')} style={{width: 170, height: 210, }} />  
+        <Image source={require('../assets/images/ClinicalSkillsLogo4.png')} style={{width: 120, height: 150, }} />  
       </View>
         
         <View style={styles.box}> 
@@ -29,9 +29,9 @@ export default function LinksScreen() {
                         dropdownStyle={{width:190, }}/>
 
           <View style={styles.BoxBorder(height, width)}>
-          <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://tools.brighton.ac.uk/medical-school/AnatomyInterface/admin/sessionpage.php') }>
+          <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx') }>
               <Button title="" style={styles.instructions} onPress={() => {
-            WebBrowser.openBrowserAsync('https://expo.io')}}/>
+            WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx')}}/>
             <Text style={{ fontSize: 20, color: '#fff' }}>Attend Session</Text>
           </TouchableOpacity>
         </View>
@@ -57,8 +57,8 @@ v_container: {
 
 box: {
   width: 900,
-  height: 700,
-  paddingTop: 250,
+  height: 400,
+  paddingTop: 170,
   paddingLeft: 20,
   alignItems: 'center',
 },
@@ -74,9 +74,7 @@ IconStyle:{
 },
 
 BoxBorder: (height, width) => ({
-    marginTop: 10,
-    width: (width /4)-10, 
-    height: '20%',
+    marginTop: 2,
     borderColor: '#F2F2EB',
     borderStyle:'line',
     borderRadius: 8,
