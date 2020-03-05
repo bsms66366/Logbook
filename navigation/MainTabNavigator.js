@@ -7,10 +7,15 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import LinksScreen from '../screens/LinksScreen';
-import QRCodeScreen from '../screens/QRCodeScreen';
+//import QRCodeScreen from '../screens/QRCodeScreen';
 import FeedbackScreen from '../screens/FeedbackScreen';
 import SessionScreen from '../screens/SessionScreen';
 import attendanceDate from '../screens/attendanceDate';
+import Authentication from '../screens/Authentication';
+//import Biometrics from '../screens/Biometrics';
+//import createSignature from '../screens/createSignature';
+
+
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -74,13 +79,13 @@ SessionsStack.path = '';
 /*****************************************************path pots****/
 const SettingsStack = createStackNavigator(
   {
-    QRCode: QRCodeScreen,
+    Authentication: Authentication,
   },
   config
 );
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'QR Code',
+  tabBarLabel: 'Authentication',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-barcode' : 'md-link'} />
   ),
@@ -90,13 +95,13 @@ SettingsStack.path = '';
 /*****************************************************feedback****/
 const GameStack = createStackNavigator(
   {
-    Feedback: FeedbackScreen,
+    FeedbackScreen: FeedbackScreen,
   },
   config
 );
 
 GameStack.navigationOptions = {
-  tabBarLabel: 'feedback',
+  tabBarLabel: 'Feedback',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-archive' : 'md-link'} />
   ),
