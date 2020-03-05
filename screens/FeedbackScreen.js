@@ -10,13 +10,13 @@ export default function LinksScreen() {
 
     <View style={styles.v_container}>
       <View style={styles.Logo}>
-        <Image source={require('../assets/images/Logo5.png')} style={{width: 189, height: 90, }} />  
+        <Image source={require('../assets/images/BSMS_logo_2015_WO.png')} style={{width: 250, height: 50, }} />  
       </View>
       <View style={{flex: 1, flexDirection: 'column', flexWrap:1}}>
 
-        <View style={styles.BoxBorder(height, width)}>
+        <View style={styles.welcomeImage}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://universityofsussex.eu.qualtrics.com/jfe/form/SV_egtaH07LwYrxuvP') }>
-          <Image source={require('../assets/images/interfaceIcons_Artboard19.png')} style ={styles.IconStyle} />  
+          <Image source={require('../assets/images/feedback.png')} style ={styles.IconStyle} />  
         <Button title="feedback" style={styles.titleText}/>
         </TouchableOpacity>
         </View> 
@@ -43,26 +43,36 @@ Logo: {
 },
 
 IconStyle:{
-    width: 200, 
-    height:200,
+    width: 120, 
+    height: 90,
 },
 
-BoxBorder: (height, width) => ({
+welcomeImage: {
+    width: 200,
+    height: 300,
+    resizeMode: 'contain',
+    marginTop: 50,
+    marginLeft: 10,
+    marginBottom: 10,
+
+  },
+
+/*BoxBorder: (height, width) => ({
     marginTop: 10,
     width: (width /4)-40, 
     height: '50%',
-    borderColor: '#bcba40',
+    //borderColor: '#bcba40',
     borderStyle:'dotted',
     borderRadius: 8,
     borderWidth: 1,
     marginHorizontal: 5,
     alignItems: 'center',
-  }),
+  }),*/
 
 v_container: {
     flex: 1,
     paddingTop: 30,
-    backgroundColor: '#282828',
+    backgroundColor: '#026666',
   },
 
   titleText: {

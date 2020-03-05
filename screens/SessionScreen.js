@@ -30,8 +30,8 @@ export default function LinksScreen() {
 
           <View style={styles.BoxBorder(height, width)}>
           <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx') }>
-              <Button title="" style={styles.instructions} onPress={() => {
-            WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx')}}/>
+              <Button title="" style={styles.instructions} 
+              onPress={() => {WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx'),alert('Now login to your Eportfolio!');}}/>
             <Text style={{ fontSize: 20, color: '#fff' }}>Attend Session</Text>
           </TouchableOpacity>
         </View>
