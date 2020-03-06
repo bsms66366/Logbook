@@ -52,15 +52,15 @@ HomeStack.path = '';
 /*****************************************************links****/
 const LinksStack = createStackNavigator(
   {
-    CSE: CSE,
+    pageNav: pageNav,
   },
   config
 );
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'C.S.E',
+  tabBarLabel: 'Attendance',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-bed' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-calendar' : 'md-link'} />
   ),
 };
 
@@ -69,14 +69,14 @@ LinksStack.path = '';
 
 const SessionsStack = createStackNavigator(
   {
-    pageNav: pageNav,
+    CSE: CSE,
   },
   config
 );
 SessionsStack.navigationOptions = {
-  tabBarLabel: 'Attendance',
+  tabBarLabel: 'C.S.E',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-calendar' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-bed' : 'md-link'} />
   ),
 };
 

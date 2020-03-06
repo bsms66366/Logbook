@@ -1,7 +1,8 @@
 //This is an example code for ViewPager//
 import React, { Component } from 'react';
 //import react in our code.
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, Button } from 'react-native';
+import * as WebBrowser from 'expo-web-browser';
 // import all basic components
 import {
   PagerTabIndicator,
@@ -40,17 +41,23 @@ export default class App extends Component {
               alignItems: 'center',
             }}>
             <Text style={{ color: 'white', fontSize: 30 }}>Introduction</Text>
-            <Text style={{ color: 'white', fontSize: 10, marginLeft: 20 }}>Welcome to the clinical practice component of Phase 1 teaching. The aim of your placements in both community and secondary care is to facilitate the development of your communication and examination skills in a protected environment. You will be able to observe your clinical teachers seeing patients and, as you become more proficient, you will be allowed to practise some clinical skills under close supervision. This log book contains details of your afternoon rotations, dress code, and some guidelines e.g. confidentiality. Towards the back of this booklet, you will find the clinical skills inventory which can be used to record your experiences of clinical skills teaching.This logbook should also be used to record your attendance (final pages) at clinical sessions, and will be checked at the end of the year for your attendance profile, so please look after it. I would recommend that you take a photograph or copy of the attendance page at regular intervals. If you lose your logbook, there is evidence of your attendance prior to the event. If you do lose it, please contact the Clinical Practice School Office immediately (WatsonSchoolOffice@bsms.ac.ukor telephone: 01273 644768).</Text>
+            <Text style={{ color: 'white', fontSize: 10, marginLeft: 20 }}>Welcome to the clinical practice component of Phase 1 teaching. The aim of your placements in both community and secondary care is to facilitate the development of your communication and examination skills in a protected environment. 
+You will be able to observe your clinical teachers seeing patients and, as you become more proficient, you will be allowed to practise some clinical skills under close supervision. This log book contains details of your afternoon rotations, dress code, and some guidelines e.g. confidentiality. 
+  This logbook should also be used to record your attendance at clinical sessions, and will be checked at the end of the year for your attendance profile, so please look after it. I would recommend that you take a photograph or copy of the attendance page at regular intervals. If you lose your logbook, there is evidence of your attendance prior to the event. If you do lose it, please contact the Clinical Practice School Office immediately (WatsonSchoolOffice@bsms.ac.ukor telephone: 01273 644768)</Text>
           </View>
           <View
             style={{
-              backgroundColor: '#FFC300',
+              backgroundColor: '#026666',
               flex: 1,
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-            <Text style={{ color: 'white', fontSize: 30 }}>Three</Text>
-          </View>
+            <Text style={{ color: 'white', fontSize: 20 }}>Press here to login</Text>
+            <Text style={{ fontSize: 10, color: '#fff', marginLeft: 20 }}>The acquisition of clinical skills in BSMS will be progressive in both range and depth, in keeping with the overall shape of the curriculum and with the growing academic, professional and personal maturity of the student. The medical school endorses that the maintenance of safe and effective clinical skills requires continuing repetition, reflection, and refinement. </Text>
+         
+            <Button title="Login" onPress={() => {WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx'),alert('Now login to your Eportfolio!');}}/>
+            
+            </View>
         </IndicatorViewPager>
 
       </View>
