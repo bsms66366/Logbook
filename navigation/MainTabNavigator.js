@@ -2,18 +2,23 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
+import ViewPager from '@react-native-community/viewpager';
 
+
+import pageNav from '../screens/pageNav';
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-import LinksScreen from '../screens/LinksScreen';
+//import LinksScreen from '../screens/LinksScreen';
 //import QRCodeScreen from '../screens/QRCodeScreen';
-import FeedbackScreen from '../screens/FeedbackScreen';
-import SessionScreen from '../screens/SessionScreen';
+//import FeedbackScreen from '../screens/FeedbackScreen';
+//import SessionScreen from '../screens/SessionScreen';
 import attendanceDate from '../screens/attendanceDate';
+//import dateScreen from '../screens/dateScreen';
 import Authentication from '../screens/Authentication';
 //import Biometrics from '../screens/Biometrics';
 //import createSignature from '../screens/createSignature';
+import CSE from '../screens/CSE';
 
 
 
@@ -47,7 +52,7 @@ HomeStack.path = '';
 /*****************************************************links****/
 const LinksStack = createStackNavigator(
   {
-    Links: attendanceDate,
+    CSE: CSE,
   },
   config
 );
@@ -64,7 +69,7 @@ LinksStack.path = '';
 
 const SessionsStack = createStackNavigator(
   {
-    Session: SessionScreen,
+    pageNav: pageNav,
   },
   config
 );
@@ -95,13 +100,13 @@ SettingsStack.path = '';
 /*****************************************************feedback****/
 const GameStack = createStackNavigator(
   {
-    FeedbackScreen: FeedbackScreen,
+    attendanceDate: attendanceDate,
   },
   config
 );
 
 GameStack.navigationOptions = {
-  tabBarLabel: 'Feedback',
+  tabBarLabel: 'Date',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-archive' : 'md-link'} />
   ),
