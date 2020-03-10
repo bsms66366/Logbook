@@ -23,7 +23,7 @@ export default class App extends Component {
 
 
 
-      <View style={{ flex: 1, marginTop: 30 }}>
+      <View style={{ flex: 1, marginTop: 0 }}>
         {/*Example of Dot Indicator*/}
         <IndicatorViewPager
           style={{ height: 450 }}
@@ -50,6 +50,18 @@ export default class App extends Component {
              <Text style={{ color: 'white', fontSize: 12, marginLeft: 30 }}>Welcome to the clinical practice component of Phase 1 teaching. The aim of your placements in both community and secondary care is to facilitate the development of your communication and examination skills in a protected environment. You will be able to observe your clinical teachers seeing patients and, as you become more proficient, you will be allowed to practise some clinical skills under close supervision.</Text> 
 
           </View>
+          <View
+            style={{
+              backgroundColor: '#FF5733',
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Text style={{ color: 'white', fontSize: 20 }}>Introduction</Text>
+             <Text style={{ color: 'white', fontSize: 12, marginLeft: 30 }}>Welcome to the clinical practice component of Phase 1 teaching. The aim of your placements in both community and secondary care is to facilitate the development of your communication and examination skills in a protected environment. You will be able to observe your clinical teachers seeing patients and, as you become more proficient, you will be allowed to practise some clinical skills under close supervision.</Text> 
+
+          </View>
+          
           <View
             style={{
               backgroundColor: '#FFA221',

@@ -29,7 +29,7 @@ const config = Platform.select({
 
 const HomeStack = createStackNavigator(
   {
-    Home: HomeScreen,
+    pagesNav: pagesNav,
   },
   config
 );
