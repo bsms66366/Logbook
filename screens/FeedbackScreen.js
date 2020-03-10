@@ -15,9 +15,11 @@ export default function LinksScreen() {
       <View style={{flex: 1, flexDirection: 'column', flexWrap:1}}>
 
         <View style={styles.welcomeImage}>
+  <Image source={require('../assets/images/feedback.png')} style ={styles.IconStyle} />  
+
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://universityofsussex.eu.qualtrics.com/jfe/form/SV_egtaH07LwYrxuvP') }>
-          <Image source={require('../assets/images/feedback.png')} style ={styles.IconStyle} />  
-        <Button title="feedback" style={styles.titleText}/>
+          <Image source={require('../assets/images/fingerprint.png')} style ={styles.IconStyle} />  
+        <Text>Click here</Text>
         </TouchableOpacity>
         </View> 
        </View>
@@ -50,7 +52,7 @@ IconStyle:{
 welcomeImage: {
     width: 200,
     height: 300,
-    resizeMode: 'contain',
+    //resizeMode: 'contain',
     marginTop: 50,
     marginLeft: 10,
     marginBottom: 10,

@@ -83,14 +83,13 @@ export default class App extends Component {
           </View>
           <View
             style={{
-              backgroundColor: '#FF5733',
+              backgroundColor: '#026666',
               flex: 1,
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-            <Text style={{ color: 'white', fontSize: 20 }}>Introduction</Text>
-             <Text style={{ color: 'white', fontSize: 12, marginLeft: 30 }}>Welcome to the clinical practice component of Phase 1 teaching. The aim of your placements in both community and secondary care is to facilitate the development of your communication and examination skills in a protected environment. You will be able to observe your clinical teachers seeing patients and, as you become more proficient, you will be allowed to practise some clinical skills under close supervision.</Text> 
-
+            <Text style={{ color: 'white', fontSize: 20 }}>Dress code</Text>
+             <Text style={{ color: 'white', fontSize: 12, marginLeft: 30 }}>You should always dress smartly when in a clinical environment and when meeting patients. Please note that this includes examinations which occur in, or simulate, the clinical environment such as the OCSEs.</Text> 
           </View>
           
           <View
@@ -100,16 +99,14 @@ export default class App extends Component {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-            <Text style={{ color: 'white', fontSize: 20 }}>Login here</Text>
+          
             <Text style={{ color: 'white', fontSize: 15, marginLeft: 30 }}>This log book contains details of your afternoon rotations, dress code, and some guidelines e.g. confidentiality. The clinical skills inventory which will be used to record your experiences of clinical skills teaching.</Text>
             
-            <Button title="Login" onPress={() => {WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx'),alert('Now login to your Eportfolio!');}}/>
-             
+            <Button title="" onPress={() => {WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx'),alert('Now login to your Eportfolio!');}}/>
+          
 <TouchableOpacity onPress={this.scanFingerPrint}>
-<Image source={require('../assets/images/fingerprint.png')} style={{width: 100, height: 130, }} />
+<Image source={require('../assets/images/fingerprint.png')} style={{width: 100, height: 130, }} />   
 <Text>login here</Text>
-
-
 </TouchableOpacity>
 
 
