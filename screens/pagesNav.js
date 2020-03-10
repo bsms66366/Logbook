@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 //import react in our code.
 import { StyleSheet, View, Text, Image, Button, TouchableOpacity } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
+import * as LocalAuthentication from 'expo-local-authentication';
+import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions';
+
+
+//import Geolocation from '@react-native-community/geolocation';
 //import ReactNativeZoomableView from '@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView';
 
 // import all basic components
@@ -18,6 +24,31 @@ import {
 
 
 export default class App extends Component {
+
+  scanFingerPrint = async () => {
+    try {
+      let results = await LocalAuthentication.authenticateAsync();
+      if (results.success) {
+       let { status } = await Permissions.askAsync(Permissions.LOCATION);
+    if (status !== 'granted') {
+      alert('Permission to access location was denied'
+      );
+    }
+
+    let location = await Location.getCurrentPositionAsync({});
+    alert (JSON.stringify(location));
+        WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx'),alert('Now login to your Eportfolio!');
+    
+      } else {
+        this.setState({
+          failedCount: this.state.failedCount + 1,
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   render() {
     return (
 
@@ -71,9 +102,17 @@ export default class App extends Component {
             }}>
             <Text style={{ color: 'white', fontSize: 20 }}>Login here</Text>
             <Text style={{ color: 'white', fontSize: 15, marginLeft: 30 }}>This log book contains details of your afternoon rotations, dress code, and some guidelines e.g. confidentiality. The clinical skills inventory which will be used to record your experiences of clinical skills teaching.</Text>
-            <Image source={require('../assets/images/fingerprint.png')} style={{width: 100, height: 130, }} />
+            
             <Button title="Login" onPress={() => {WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx'),alert('Now login to your Eportfolio!');}}/>
              
+<TouchableOpacity onPress={this.scanFingerPrint}>
+<Image source={require('../assets/images/fingerprint.png')} style={{width: 100, height: 130, }} />
+<Text>login here</Text>
+
+
+</TouchableOpacity>
+
+
           </View>
         </IndicatorViewPager>
 </View>
