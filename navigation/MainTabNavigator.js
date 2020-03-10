@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import ViewPager from '@react-native-community/viewpager';
 
 
-import pageNav from '../screens/pageNav';
+import pagesNav from '../screens/pagesNav';
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import SettingsScreen from '../screens/SettingsScreen';
@@ -52,7 +52,7 @@ HomeStack.path = '';
 /*****************************************************links****/
 const LinksStack = createStackNavigator(
   {
-    pageNav: pageNav,
+    pagesNav: pagesNav,
   },
   config
 );
