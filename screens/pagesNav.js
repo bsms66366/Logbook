@@ -37,8 +37,7 @@ export default class App extends Component {
 
     let location = await Location.getCurrentPositionAsync({});
     alert (JSON.stringify(location));
-        WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx'),alert('Now login to your Eportfolio!');
-    
+        //WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx'),alert('Now login to your Eportfolio!');
       } else {
         this.setState({
           failedCount: this.state.failedCount + 1,
@@ -102,10 +101,11 @@ export default class App extends Component {
           
             <Text style={{ color: 'white', fontSize: 15, marginLeft: 30 }}>This log book contains details of your afternoon rotations, dress code, and some guidelines e.g. confidentiality. The clinical skills inventory which will be used to record your experiences of clinical skills teaching.</Text>
             
-            <Button title="" onPress={() => {WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx'),alert('Now login to your Eportfolio!');}}/>
+            //<Button title="" onPress={() => {WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx'),alert('Now login to your Eportfolio!');}}/>
           
 <TouchableOpacity onPress={this.scanFingerPrint}>
 <Image source={require('../assets/images/fingerprint.png')} style={{width: 100, height: 130, }} />   
+this.props.navigation.navigate('toDoList')
 <Text>login here</Text>
 </TouchableOpacity>
 

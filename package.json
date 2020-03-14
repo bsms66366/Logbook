@@ -38,7 +38,8 @@
     "react-native-web": "^0.11.7",
     "react-navigation": "^3.12.0",
     "rn-viewpager": "^1.2.9",
-    "expo-location": "~7.0.0"
+    "expo-location": "~7.0.0",
+    "expo-sqlite": "~7.0.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^7.0.0",

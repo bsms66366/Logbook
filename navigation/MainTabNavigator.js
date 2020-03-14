@@ -13,12 +13,13 @@ import SettingsScreen from '../screens/SettingsScreen';
 import QRCodeScreen from '../screens/QRCodeScreen';
 import FeedbackScreen from '../screens/FeedbackScreen';
 //import SessionScreen from '../screens/SessionScreen';
-import attendanceDate from '../screens/attendanceDate';
+//import attendanceDate from '../screens/attendanceDate';
 //import dateScreen from '../screens/dateScreen';
 //import Authentication from '../screens/Authentication';
 //import Biometrics from '../screens/Biometrics';
 //import createSignature from '../screens/createSignature';
 import CSE from '../screens/CSE';
+import toDoList from '../screens/toDoList';
 
 
 
@@ -52,7 +53,7 @@ HomeStack.path = '';
 /*****************************************************links****/
 const LinksStack = createStackNavigator(
   {
-    attendanceDate: attendanceDate,
+    toDoList: toDoList,
   },
   config
 );
