@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 //import react in our code.
 import { StyleSheet, View, Text, Image, Button, TouchableOpacity } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
-import * as LocalAuthentication from 'expo-local-authentication';
-import * as Location from 'expo-location';
-import * as Permissions from 'expo-permissions';
-
-
-//import Geolocation from '@react-native-community/geolocation';
 //import ReactNativeZoomableView from '@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView';
 
 // import all basic components
@@ -25,7 +19,7 @@ import {
 
 export default class App extends Component {
 
-  scanFingerPrint = async () => {
+    scanFingerPrint = async () => {
     try {
       let results = await LocalAuthentication.authenticateAsync();
       if (results.success) {
@@ -89,6 +83,7 @@ export default class App extends Component {
             }}>
             <Text style={{ color: 'white', fontSize: 20 }}>Dress code</Text>
              <Text style={{ color: 'white', fontSize: 12, marginLeft: 30 }}>You should always dress smartly when in a clinical environment and when meeting patients. Please note that this includes examinations which occur in, or simulate, the clinical environment such as the OCSEs.</Text> 
+
           </View>
           
           <View
@@ -98,17 +93,18 @@ export default class App extends Component {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-          
+            <Text style={{ color: 'white', fontSize: 20 }}>Login here</Text>
             <Text style={{ color: 'white', fontSize: 15, marginLeft: 30 }}>This log book contains details of your afternoon rotations, dress code, and some guidelines e.g. confidentiality. The clinical skills inventory which will be used to record your experiences of clinical skills teaching.</Text>
-            
-            <Button title="" onPress={() => {WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx'),alert('Now login to your Eportfolio!');}}/>
-          
-<TouchableOpacity onPress={this.scanFingerPrint}>
-<Image source={require('../assets/images/fingerprint.png')} style={{width: 100, height: 130, }} />   
+
+            /<Image source={require('../assets/images/fingerprint.png')} style={{width: 100, height: 130, }} />
+            <Button title="Login" onPress={() => {WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx'),alert('Now login to your Eportfolio!');}}/>
+
+            <TouchableOpacity onPress={this.scanFingerPrint}>
+<Image source={require('../assets/images/fingerprint.png')} style={{width: 100, height: 130, }} />
+
 <Text>login here</Text>
 </TouchableOpacity>
-
-
+             
           </View>
         </IndicatorViewPager>
 </View>

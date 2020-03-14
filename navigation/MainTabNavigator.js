@@ -5,21 +5,25 @@ import { Ionicons } from '@expo/vector-icons';
 import ViewPager from '@react-native-community/viewpager';
 
 
+//import pagesNav1 from '../screens/pagesNav1';
+
 import pagesNav from '../screens/pagesNav';
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-//import LinksScreen from '../screens/LinksScreen';
+import LinksScreen from '../screens/LinksScreen';
 import QRCodeScreen from '../screens/QRCodeScreen';
 import FeedbackScreen from '../screens/FeedbackScreen';
 //import SessionScreen from '../screens/SessionScreen';
-//import attendanceDate from '../screens/attendanceDate';
+import attendanceDate from '../screens/attendanceDate';
 //import dateScreen from '../screens/dateScreen';
 //import Authentication from '../screens/Authentication';
 //import Biometrics from '../screens/Biometrics';
 //import createSignature from '../screens/createSignature';
-import CSE from '../screens/CSE';
-import toDoList from '../screens/toDoList';
+//import CSE from '../screens/CSE';
+//import toDoList from '../screens/toDoList';
+//import studentRegister from '../screens/studentRegister';
+import course from '../screens/course';
 
 
 
@@ -53,7 +57,7 @@ HomeStack.path = '';
 /*****************************************************links****/
 const LinksStack = createStackNavigator(
   {
-    toDoList: toDoList,
+    course: course,
   },
   config
 );
@@ -70,7 +74,7 @@ LinksStack.path = '';
 
 const SessionsStack = createStackNavigator(
   {
-    CSE: CSE,
+    attendanceDate: attendanceDate,
   },
   config
 );
