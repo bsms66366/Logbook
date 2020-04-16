@@ -14,10 +14,11 @@ import SettingsScreen from '../screens/SettingsScreen';
 import LinksScreen from '../screens/LinksScreen';
 import QRCodeScreen from '../screens/QRCodeScreen';
 import FeedbackScreen from '../screens/FeedbackScreen';
+import Registration from '../screens/Registration';
 //import SessionScreen from '../screens/SessionScreen';
-import attendanceDate from '../screens/attendanceDate';
+//import attendanceDate from '../screens/attendanceDate';
 //import dateScreen from '../screens/dateScreen';
-//import Authentication from '../screens/Authentication';
+import Authentication from '../screens/Authentication';
 //import Biometrics from '../screens/Biometrics';
 //import createSignature from '../screens/createSignature';
 //import CSE from '../screens/CSE';
@@ -74,14 +75,14 @@ LinksStack.path = '';
 
 const SessionsStack = createStackNavigator(
   {
-    attendanceDate: attendanceDate,
+    Registration: Registration,
   },
   config
 );
 SessionsStack.navigationOptions = {
-  tabBarLabel: 'C.S.E',
+  tabBarLabel: 'Sign',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-bed' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-save' : 'md-link'} />
   ),
 };
 
@@ -89,7 +90,7 @@ SessionsStack.path = '';
 /*****************************************************path pots****/
 const SettingsStack = createStackNavigator(
   {
-    QRCodeScreen: QRCodeScreen,
+    Authentication: Authentication,
   },
   config
 );
@@ -113,7 +114,7 @@ const GameStack = createStackNavigator(
 GameStack.navigationOptions = {
   tabBarLabel: 'Feedback',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-chat' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-body' : 'md-link'} />
   ),
 };
 

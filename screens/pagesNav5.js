@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 //import react in our code.
-import { StyleSheet, View, Text, Image, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, Image, Button, TouchableOpacity, ScrollView } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 import * as LocalAuthentication from 'expo-local-authentication';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
-import ModalDropdown from 'react-native-modal-dropdown';
+import DropDownItem from "react-native-drop-down-item";
+import Accordion from '@dooboo-ui/native-accordion';
+
+
 
 //import Geolocation from '@react-native-community/geolocation';
 //import ReactNativeZoomableView from '@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView';
@@ -20,6 +23,50 @@ import {
   PagerDotIndicator,
 } from 'rn-viewpager';
 //import PagerTabIndicator , IndicatorViewPager , PagerTitleIndicator , PagerDotIndicator
+
+
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    overflow: 'hidden',
+  },
+  underline: {
+    width: '100%',
+    height: 1,
+    position: 'absolute',
+    top: 0,
+  },
+  content: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+  },
+  contentChild: {
+    padding: 12,
+  },
+  contentView: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    height: '100%',
+  },
+  contentTxt: {
+    color: 'black',
+    marginLeft: 8,
+    fontSize: 12,
+  },
+  contentFooter: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    height: 48,
+    paddingHorizontal: 12,
+  },
+})
 
 
 
@@ -98,20 +145,59 @@ export default class App extends Component {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-          <ModalDropdown options={['Module 101','Module 102','Module 103','Module 104','Module 201','Module 202','Module 203','Module 204']}
-                        defaultValue = {"Select Module"}
-                        style = {{ flex: 1,paddingRight:30}}
-                        textStyle = {{fontWeight:'bold', textAlign: 'right', fontSize: 20, color:'#F2A007'}}
-                        dropdownStyle={{width:190, }}/>
-
-                        <ModalDropdown options={['GP-1','GP-2','GP-3','GP-4','GP-5','GP-6','GP-7','GP-8','GP-9','GP-10']}
-                        defaultValue = {"Select Session"}
-                        style = {{ flex: 1,paddingRight:30}}
-                        textStyle = {{fontWeight:'bold', textAlign: 'right', fontSize: 20, color:'#F2A007'}}
-                        dropdownStyle={{width:190, }}/>
-
+          
             <Text style={{ color: 'white', fontSize: 15, marginLeft: 30 }}>This log book contains details of your afternoon rotations, dress code, and some guidelines e.g. confidentiality. The clinical skills inventory which will be used to record your experiences of clinical skills teaching.</Text>
             
+            <View style={styles.container}>
+  <ScrollView style={{ alignSelf: 'stretch' }}>
+    {
+      this.state.contents
+        ? this.state.contents.map((param, i) => {
+          return (
+            <Accordion
+              key={i}
+              style={styles.Accordion}
+              contentVisible={false}
+              visibleElement={
+                <StyledImage
+                  source={ic_arr_up}
+                />
+              }
+              invisibleElement={
+                <StyledImage
+                  source={ic_arr_down}
+                />
+              }
+              header={
+                <View>
+                  <Text style={{
+                    fontSize: 16,
+                    color: 'blue',
+                  }}>{param.title}</Text>
+                </View>
+              }
+            >
+              <Text style={[
+                styles.txt,
+                {
+                  fontSize: 20,
+                }
+              ]}>
+                {param.body}
+              </Text>
+            </Accordion>
+          );
+        })
+        : null
+    }
+    <View style={{ height: 96 }}/>
+  </ScrollView>
+</View>
+});
+
+
+
+
             <Button title="" onPress={() => {WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx'),alert('Now login to your Eportfolio!');}}/>
           
 <TouchableOpacity onPress={this.scanFingerPrint}>
