@@ -23,16 +23,16 @@ import {
 
 /*function Dropdown() {
   const [state, setState] = React.useState({
-    option: "Module 101",
+    module: "Module 101",
             "Module 102",
             "Module 103",
             "Module 104",
             "Module 201",
             "Module 202",
             "Module 203",
-            "Module 204"
-  })*/
-
+            "Module 204",
+  })
+*/
 export default class App extends Component {
 
   scanFingerPrint = async () => {
