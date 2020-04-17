@@ -21,7 +21,17 @@ import {
 } from 'rn-viewpager';
 //import PagerTabIndicator , IndicatorViewPager , PagerTitleIndicator , PagerDotIndicator
 
-
+/*function Dropdown() {
+  const [state, setState] = React.useState({
+    option: "Module 101",
+            "Module 102",
+            "Module 103",
+            "Module 104",
+            "Module 201",
+            "Module 202",
+            "Module 203",
+            "Module 204"
+  })*/
 
 export default class App extends Component {
 
@@ -50,8 +60,6 @@ export default class App extends Component {
 
   render() {
     return (
-
-
 
       <View style={{ flex: 1, marginTop: 0 }}>
         {/*Example of Dot Indicator*/}
@@ -91,32 +99,45 @@ export default class App extends Component {
              <Text style={{ color: 'white', fontSize: 12, marginLeft: 30 }}>You should always dress smartly when in a clinical environment and when meeting patients. Please note that this includes examinations which occur in, or simulate, the clinical environment such as the OCSEs.</Text> 
           </View>
           
-          <View
+           <View
             style={{
-              backgroundColor: '#FFA221',
+              backgroundColor: '#35459E',
               flex: 1,
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-          <ModalDropdown options={['Module 101','Module 102','Module 103','Module 104','Module 201','Module 202','Module 203','Module 204']}
+            <Text style={{ color: 'white', fontSize: 20 }}>Clinical Skills</Text>
+             <Text style={{ color: 'white', fontSize: 12, marginLeft: 10 }}>The clinical skills inventory which will be used to record your experiences of clinical skills teaching.</Text> 
+          </View>
+          <View
+            style={{
+              backgroundColor: '#FF9900',
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+
+          <Text>Choose Option</Text>
+          <ModalDropdown option={['Module 101','Module 102','Module 103','Module 104','Module 201','Module 202','Module 203','Module 204']}
                         defaultValue = {"Select Module"}
-                        style = {{ flex: 1,paddingRight:30}}
-                        textStyle = {{fontWeight:'bold', textAlign: 'right', fontSize: 20, color:'#F2A007'}}
-                        dropdownStyle={{width:190, }}/>
+                        style = {{ flex: 1, paddingLeft:10, paddingRight:10 }}
+                        textStyle = {{fontWeight:'bold', textAlign: 'center', fontSize: 20, color:'#FFFFFF'}}
+                        dropdownStyle={{width:180, }}/>
+                        <Text>Choose Option</Text>
 
-                        <ModalDropdown options={['GP-1','GP-2','GP-3','GP-4','GP-5','GP-6','GP-7','GP-8','GP-9','GP-10']}
+                        <ModalDropdown option={['GP-1','GP-2','GP-3','GP-4','GP-5','GP-6','GP-7','GP-8','GP-9','GP-10']}
                         defaultValue = {"Select Session"}
-                        style = {{ flex: 1,paddingRight:30}}
-                        textStyle = {{fontWeight:'bold', textAlign: 'right', fontSize: 20, color:'#F2A007'}}
+                        style = {{ flex: 1,paddingLeft:10, paddingRight:30, Color:'#FFFFFF'}}
+                        textStyle = {{fontWeight:'bold', textAlign: 'right', fontSize: 20, color:'#FFFFFF'}}
                         dropdownStyle={{width:190, }}/>
 
-            <Text style={{ color: 'white', fontSize: 15, marginLeft: 30 }}>This log book contains details of your afternoon rotations, dress code, and some guidelines e.g. confidentiality. The clinical skills inventory which will be used to record your experiences of clinical skills teaching.</Text>
+            <Text style={{ color: 'white', fontSize: 15, marginLeft: 30 }}>This log book contains details of your afternoon rotations, dress code, and some guidelines e.g. confidentiality.</Text>
             
             <Button title="" onPress={() => {WebBrowser.openBrowserAsync('https://www.nhseportfolios.org/Anon/Login/Login.aspx'),alert('Now login to your Eportfolio!');}}/>
-          
+         
 <TouchableOpacity onPress={this.scanFingerPrint}>
-<Image source={require('../assets/images/fingerprint.png')} style={{width: 100, height: 130, }} />   
-<Text>login here</Text>
+<Image source={require('../assets/images/fingerprint.png')} style={{width: 90, height: 110, }} />   
+
 </TouchableOpacity>
 
 
