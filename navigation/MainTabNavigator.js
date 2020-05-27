@@ -25,7 +25,7 @@ import Authentication from '../screens/Authentication';
 //import toDoList from '../screens/toDoList';
 //import studentRegister from '../screens/studentRegister';
 import course from '../screens/course';
-
+import GPLogin from '../screens/GPLogin';
 
 
 const config = Platform.select({
@@ -90,13 +90,13 @@ SessionsStack.path = '';
 /*****************************************************path pots****/
 const SettingsStack = createStackNavigator(
   {
-    Authentication: Authentication,
+    GPLogin: GPLogin,
   },
   config
 );
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'QR Code',
+  tabBarLabel: 'GPLogin',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-barcode' : 'md-link'} />
   ),
